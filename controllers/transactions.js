@@ -24,8 +24,17 @@ const update = (req, res) => {
     })
 }
 
+const destroy = (req, res) => {
+    db.Transaction.findByIdAndDelete(req.params.id, (err, deletedTransaction) => {
+        if (err) console.log(`Error in transaction destroy: ${err}`);
+
+        res.status(200).json(deletedTransaction);
+    })
+}
+
 module.exports = {
     index,
     create,
     update,
+    destroy
 }
