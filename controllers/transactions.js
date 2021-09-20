@@ -8,6 +8,15 @@ const index = (req, res) => {
     })
 }
 
+const create = (req, res) => {
+    db.Transaction.create(req.body, (err, createdTransaction) => {
+        if (err) console.log(`Error in transaction create: ${err}`);
+
+        res.status(200).json(createdTransaction);
+    })
+}
+
 module.exports = {
     index,
+    create,
 }
