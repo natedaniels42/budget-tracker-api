@@ -8,6 +8,15 @@ const index = (req, res) => {
     })
 }
 
+const create = (req, res) => {
+    db.Deposit.create(req.body, (err, createdDeposit) => {
+        if (err) console.log(`Error in deposit create: ${err}`);
+
+        res.status(200).json(createdDeposit);
+    })
+}
+
 module.exports = {
     index,
+    create,
 }
