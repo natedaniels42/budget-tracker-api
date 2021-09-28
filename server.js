@@ -7,7 +7,7 @@ const routes = require('./routes');
 const PORT = process.env.PORT;
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://budgettracker42.herokuapp.com/',
     methods: 'GET, POST, PUT, DELETE',
     optionsSuccessStatus: 200
 }));
