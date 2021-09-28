@@ -24,8 +24,17 @@ const update = (req, res) => {
     })
 }
 
+const destroy = (req, res) => {
+    db.Deposit.findByIdAndDelete(req.params.id, (err, deletedDeposit) => {
+        if (err) console.log(`Error in depost destroy: ${err}`);
+
+        res.status(200).json(deletedDeposit);
+    })
+}
+
 module.exports = {
     index,
     create,
     update,
+    destroy,
 }
