@@ -16,5 +16,6 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use('/api/v1/transactions', routes.transactions);
+app.use('/api/v1/deposits', routes.deposits);
 
 app.listen(PORT, () => console.log(`Server is listening on port: ${PORT}`));

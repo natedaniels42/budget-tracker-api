@@ -10,4 +10,5 @@ mongoose.connect(connectionString)
 
 module.exports = {
     Transaction: require('./Transaction'),
+    Deposit: require('./Deposit'),
 }

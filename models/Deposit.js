@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const TransactionSchema = mongoose.Schema({
+const DepositSchema = mongoose.Schema({
     name: {
         type: String, 
         required: true,
@@ -15,6 +15,6 @@ const TransactionSchema = mongoose.Schema({
     }
 })
 
-const Transaction = mongoose.model('Transaction', TransactionSchema);
+const Deposit = mongoose.model('Deposit', DepositSchema);
 
-module.exports = Transaction;
+module.exports = Deposit;
