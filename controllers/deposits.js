@@ -16,7 +16,16 @@ const create = (req, res) => {
     })
 }
 
+const update = (req, res) => {
+    db.Deposit.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedDeposit) => {
+        if (err) console.log(`Error in deposit update: ${err}`);
+
+        res.status(200).json(updatedDeposit);
+    })
+}
+
 module.exports = {
     index,
     create,
+    update,
 }
